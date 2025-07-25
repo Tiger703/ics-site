@@ -1,0 +1,56 @@
+# -----------------------------
+# Disable Directory Listing
+# -----------------------------
+Options -Indexes
+
+# -----------------------------
+# Block Access to Sensitive Files
+# -----------------------------
+<FilesMatch "\.(htaccess|env|ini|log|conf|sql|bak)$">
+    Require all denied
+</FilesMatch>
+
+# -----------------------------
+# Set Basic Security Headers
+# -----------------------------
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set X-Content-Type-Options "nosniff"
+</IfModule>
+
+# -----------------------------
+# Rewrite Rules: Force HTTPS + Redirect www to non-www
+# -----------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirect HTTP to HTTPS
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^ https://ics.wuaze.com%{REQUEST_URI} [L,R=301]
+
+    # Redirect www to non-www
+    RewriteCond %{HTTP_HOST} ^www\.ics\.wuaze\.com$ [NC]
+    RewriteRule ^ https://ics.wuaze.com%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+
+# -----------------------------
+# Prevent Image Hotlinking (Optional)
+# -----------------------------
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https://ics\.wuaze\.com [NC]
+RewriteRule \.(jpg|jpeg|png|gif|webp)$ - [F]
+
+# -----------------------------
+# Disable TRACE HTTP Method (Prevent XST Attacks)
+# -----------------------------
+TraceEnable off
+
+# -----------------------------
+# Prevent Browser Caching (Optional for Dev)
+# -----------------------------
+# <IfModule mod_expires.c>
+#   ExpiresActive On
+#   ExpiresDefault "access plus 1 month"
+# </IfModule>

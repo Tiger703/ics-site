@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://ics.wuaze.com/about.html</loc>
+    <lastmod>2025-07-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://ics.wuaze.com/contact.html</loc>
+    <lastmod>2025-07-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://ics.wuaze.com/feature.html</loc>
+    <lastmod>2025-07-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://ics.wuaze.com/index.html</loc>
+    <lastmod>2025-07-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://ics.wuaze.com/project.html</loc>
+    <lastmod>2025-07-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://ics.wuaze.com/service.html</loc>
+    <lastmod>2025-07-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Add other pages here -->
+
+</urlset>
