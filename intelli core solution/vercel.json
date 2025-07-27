@@ -1,5 +1,18 @@
 {
+  "builds": [
+    {
+      "src": "intelli core solution/index.html",
+      "use": "@vercel/static"
+    }
+  ],
   "rewrites": [
     { "source": "/", "destination": "/intelli core solution/index.html" }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/intelli core solution/$1"
+    }
   ]
 }
+
