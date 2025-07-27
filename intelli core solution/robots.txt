@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://ics-site-xi.vercel.app/sitemap.xml
